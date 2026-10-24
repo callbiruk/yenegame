@@ -54,3 +54,4 @@ footer.site a{color:var(--ink)}
 .skip{position:absolute;left:-999px}
 .skip:focus{left:16px;top:8px;background:var(--gold);color:#3B2416;padding:.4rem .7rem;z-index:9}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+.card>:first-child{margin-top:0}.card>:last-child{margin-bottom:0}
