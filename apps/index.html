@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YeneGame — Our apps</title>
+<meta name="description" content="Apps made by YeneGame: YeneCharades, YeneLijoch and YeneRadio.">
+<meta name="theme-color" content="#F7F1E3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1C130D" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%233B2416'/%3E%3Crect x='3' y='3' width='10' height='10' fill='%23F5C400'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="tibeb" aria-hidden="true"></div>
+<header class="site"><div class="wrap">
+<a class="brand" href="../"><span class="mark" aria-hidden="true"></span>YeneGame</a>
+<nav aria-label="Main"><ul><li><a href="../">About</a></li><li><a href="../privacy/">Privacy</a></li><li><a href="../terms/">Terms</a></li><li><a href="./" aria-current="page">Apps</a></li><li><a href="../support/">Support</a></li><li><a href="../delete-data/">Delete data</a></li></ul></nav>
+</div></header>
+<main id="main"><div class="wrap">
+<span class="eyebrow">Our apps</span>
+<h1>Apps by YeneGame</h1>
+<p class="lead">Everything we make, in one place. Each app is free to download.</p>
+<style>
+.apps{display:grid;gap:1rem;grid-template-columns:1fr}
+@media (min-width:640px){.apps{grid-template-columns:1fr 1fr}}
+.app{display:flex;gap:1rem;align-items:center;margin:0}
+.app img{width:72px;height:72px;border:2px solid var(--line);flex:none}
+.app h3{margin:0}
+.app p{margin:.1rem 0 .5rem;color:var(--muted)}
+.app .links a{margin-right:.8rem;font-weight:700}
+</style>
+<div class="apps" id="apps"><noscript><p>Turn on JavaScript to see the list, or read <a href="../apps.json">apps.json</a>.</p></noscript></div>
+<p class="meta">This list also feeds the &ldquo;More from YeneGame&rdquo; shelf inside our apps (<a href="../apps.json">apps.json</a>).</p>
+<script>
+fetch('../apps.json').then(r => r.json()).then(d => {
+  const el = document.getElementById('apps');
+  for (const a of d.apps) {
+    const links = [];
+    if (a.ios && a.ios.live) links.push(`<a href="https://apps.apple.com/app/id${a.ios.appStoreId}">App Store</a>`);
+    if (a.android && a.android.live) links.push(`<a href="https://play.google.com/store/apps/details?id=${a.android.package}">Google Play</a>`);
+    const card = document.createElement('div');
+    card.className = 'card app';
+    card.innerHTML = `<img src="${a.icon}" alt="" width="72" height="72"><div><h3></h3><p></p><div class="links">${links.join('') || '<span class="meta">Coming soon</span>'}</div></div>`;
+    card.querySelector('h3').textContent = a.name;
+    card.querySelector('p').textContent = a.tagline;
+    el.appendChild(card);
+  }
+});
+</script>
+</div></main>
+<footer class="site"><div class="wrap">
+<div>&copy; 2026 YeneGame &middot; <a href="mailto:yenegames@gmail.com">yenegames@gmail.com</a></div>
+<ul><li><a href="../">About</a></li><li><a href="../privacy/">Privacy</a></li><li><a href="../terms/">Terms</a></li><li><a href="../support/">Support</a></li><li><a href="../delete-data/">Delete data</a></li></ul>
+</div></footer>
+<div class="tibeb" aria-hidden="true"></div>
+</body>
+</html>

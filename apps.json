@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "updated": "2026-10-27",
+  "note": "Apps shown in 'More from YeneGame' inside YeneGame apps. Set live to true once an app is public in that store.",
+  "apps": [
+    {
+      "id": "yenecharades",
+      "name": "YeneCharades",
+      "tagline": "Ethiopian party game",
+      "icon": "https://yenegame.github.io/apps/icons/yenecharades.png",
+      "color": "#F5C400",
+      "ios": { "appStoreId": "6826702621", "live": false },
+      "android": { "package": "com.yenegame.yenecharades", "live": false }
+    },
+    {
+      "id": "yenelijoch",
+      "name": "YeneLijoch",
+      "tagline": "Learning for Ethiopian kids",
+      "icon": "https://yenegame.github.io/apps/icons/yenelijoch.png",
+      "color": "#2E9E5B",
+      "ios": { "appStoreId": "6827005125", "live": false },
+      "android": { "package": "com.yenegame.yenelijoch", "live": false }
+    },
+    {
+      "id": "yeneradio",
+      "name": "YeneRadio",
+      "tagline": "Ethiopian FM radio",
+      "icon": "https://yenegame.github.io/apps/icons/yeneradio.png",
+      "color": "#1ED760",
+      "ios": { "appStoreId": "6827510111", "live": false },
+      "android": { "package": "com.yenegame.yeneradio", "live": false }
+    }
+  ]
+}
